@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container col-4">
+    <div class="card bg-light text-center">
+        <div class="card-header bg-dark">
+            <h1 class="navbar-brand text-white">Welcome!</h1>
+        </div>
+        <div class="card-body">
+            <form name="form1" asp-controller="Users" asp-action="Get" method="post">
+                <div class="btn-group-vertical">
+                    <label>Username</label>
+                    <input type="text" name="name" placeholder="Username" />
+                    <label>Number</label>
+                    <input type="text" name="number" placeholder="Password" />
+                    <hr />
+                </div>
+            </form>
+        </div>
+        <div class="card-footer">
+            <div class="btn-group">
+                <input class="align-self-center" type="submit" form="form1" value="Log In" /> |
+                <input type="submit" value="Register" />
+            </div>
+        </div>
+    </div>
+</div>
+

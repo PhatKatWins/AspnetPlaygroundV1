@@ -1,0 +1,31 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <h1 class="text-center">Users</h1>
+</head>
+<body>
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="bg-dark">
+            <tr>
+                <td class="text-white font-weight-bold">Name</td>
+                <td class="text-white font-weight-bold">Number</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr class="d-table-row">
+                    <td>@user.Name</td>
+                    <td>@user.Number</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+

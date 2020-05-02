@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Project>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <h1 class="text-center">Projects</h1>
+</head>
+<body>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="bg-dark">
+            <tr>
+                <td class="text-white font-weight-bold">Name</td>
+                <td class="text-white font-weight-bold">Description</td>
+                <td class="text-white font-weight-bold">Started</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var project in Model)
+            {
+            <tr class="d-table-row">
+                <td>
+                    <a asp-action="Details" asp-route-id="@project.ID">@project.Name</a>
+                </td>
+                <td>@project.Description</td>
+                <td>@project.CreatedOn.Date</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+
